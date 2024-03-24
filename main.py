@@ -18,7 +18,7 @@ options.add_argument('-headless')
 driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=options)
 
 # Navigate to the login page
-driver.get(MMO_URL + '/login')
+driver.get(MMO_URL)
 
 # Fill in the login form
 driver.find_element(by=By.ID, value='email').send_keys(EMAIL)
@@ -29,14 +29,9 @@ driver.find_element(by=By.XPATH, value="//button[@type='submit']").click()
 driver.implicitly_wait(10)
 
 # You are now logged in!
-print("Page Title:", driver.title)
+# print("Page Title:", driver.title)
 
-# Go mining
-# TODO: Make this API request rather then selenium
-
-driver.get(MMO_URL + '/skills/view/mining')
-driver.implicitly_wait(10)
-driver.find_element(by=By.XPATH, value="//span[text()='Coal Ore']").click()
-driver.find_element(by=By.XPATH, value="//button[@type='Submit']").click()
+# Refresh current skill
+driver.find_element(by=By.XPATH, value='//button[@x-tooltip.cursor="\'Refresh\'"]').click()
 
 driver.quit()
