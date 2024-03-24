@@ -1,5 +1,7 @@
 name: Run Python Script
 
+on: push
+
 jobs:
   build:
     runs-on: alpine-latest
