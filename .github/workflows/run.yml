@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     # This event triggers the workflow manually
   schedule:
-    - cron: '*/72 * * * *' # This runs every 72 minutes
+    - cron: '*/57 * * * *' # This runs every 57 minutes
 
 jobs:
   build:
