@@ -3,8 +3,8 @@ name: Run Python Script
 on: 
   workflow_dispatch:
     # This event triggers the workflow manually
-  schedule:
-    - cron: '*/57 * * * *' # This runs every 57 minutes
+#  schedule:
+#    - cron: '*/57 * * * *' # This runs every 57 minutes
 
 jobs:
   build:
